@@ -122,7 +122,7 @@ contract TokenFactory {
     } 
 
     function sell(address tokenAddress, uint256 amount) external {
-        require(tokens[tokenAddress] == TokenState.TRADING, "Token not in trading state");
+        require(tokens[tokenAddress] == TokenState.FUNDING, "Token not in trading state");
         require(amount > 0, "Token amount not enough");
         require(balances[tokenAddress][msg.sender] - amount>=0,"Not Enough Tokens") ;
         
